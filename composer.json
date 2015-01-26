@@ -1,0 +1,26 @@
+{
+    "name": "mtl/code-generator",
+    "description": "Generate massive amount of unique codes",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kieu Anh Tuan",
+            "email": "passkey1510@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "~4.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "MTL\\": "src/MTL/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MTL\\": "test/MTL/"
+        }
+    }
+}
