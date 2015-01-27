@@ -8,14 +8,16 @@ class Generator extends AbstractGenerator
     protected $availableCharacters = array();
     protected $repeated = true;
 
+
     public function __construct()
     {
         $this->availableCharacters = array_merge(range('A', 'Z'), range(0, 9));
     }
 
-    public function generate($repeated = true, $number = 1, $length = 5, $availableCharacters = array(), $excludedCharacters = array(), HandlerInterface $handler = null)
+    public function generate($repeated = true, $number = 1, $length = 5, $availableCharacters = array(), HandlerInterface $handler = null)
     {
-        $this->availableCharacters = array_values(array_diff($availableCharacters, $excludedCharacters));
+        $this->availableCharacters = $availableCharacters;
+//        $this->availableCharacters = array_values(array_diff($availableCharacters, $excludedCharacters));
         $this->repeated = $repeated;
 
 //        if ($this->repeated) {
@@ -29,7 +31,7 @@ class Generator extends AbstractGenerator
 
     public function generateFromConfig(Config $config, HandlerInterface $handler = null)
     {
-        return $this->generate($config->getRepeated(), $config->getNumber(), $config->getLength(), $config->getAvailableCharacters(), $config->getExcludedCharacters(), $handler);
+        return $this->generate($config->getRepeated(), $config->getNumber(), $config->getLength(), $config->getAvailableCharacters(), $handler);
     }
 
     protected function generateCodes($number, $length, HandlerInterface $handler = null)

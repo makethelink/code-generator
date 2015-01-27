@@ -11,8 +11,6 @@ class Config
 
     private $availableCharacters = array();
 
-    private $excludedCharacters = array();
-
     public function __construct($config = array())
     {
         $this->repeated = isset($config['repeated']) ? $config['repeated'] : false;
@@ -26,7 +24,6 @@ class Config
 
         $this->number = $config['number'];
         $this->length = $config['length'];
-        $this->excludedCharacters = !empty($config['excludedCharacters']) ? $config['excludedCharacters'] : array();
         $this->availableCharacters = !empty($config['availableCharacters']) ? $config['availableCharacters'] : array_merge(range('A', 'Z'), range('a', 'z'), range(0, 9));
     }
 
@@ -60,13 +57,5 @@ class Config
     public function getAvailableCharacters()
     {
         return $this->availableCharacters;
-    }
-
-    /**
-     * @return array
-     */
-    public function getExcludedCharacters()
-    {
-        return $this->excludedCharacters;
     }
 }

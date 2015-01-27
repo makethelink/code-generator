@@ -35,11 +35,6 @@ class GeneratorTest extends \PHPUnit_Framework_TestCase
             ->method('getAvailableCharacters')
             ->willReturn(range('A', 'Z'));
 
-        $mockConfig->expects($this->once())
-            ->method('getExcludedCharacters')
-            ->willReturn(array('B', 'O'));
-
-
         $codes = $generator->generateFromConfig($mockConfig);
 
         $this->assertEquals(100, count(array_unique($codes)));

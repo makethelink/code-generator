@@ -32,7 +32,6 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
 
         $this->assertFalse($config->getRepeated());
         $this->assertEquals(sort(array_merge(range('a', 'z'), range('A', 'Z'), range(0, 9))), sort($config->getAvailableCharacters()));
-        $this->assertEmpty($config->getExcludedCharacters());
     }
 
     public function testConfig()
@@ -42,13 +41,11 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
             'length' => 10,
             'repeated' => true,
             'availableCharacters' => range('A', 'Z'),
-            'excludedCharacters' => array('B', 'O')
         ));
 
         $this->assertEquals(5, $config->getNumber());
         $this->assertEquals(10, $config->getLength());
         $this->assertTrue($config->getRepeated());
         $this->assertEquals(sort(range('A', 'Z')), sort($config->getAvailableCharacters()));
-        $this->assertEquals(array('B', 'O'), $config->getExcludedCharacters());
     }
 }
