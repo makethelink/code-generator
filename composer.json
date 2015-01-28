@@ -1,5 +1,5 @@
 {
-    "name": "mtl/unique-genenrator",
+    "name": "mtl/unique-generator",
     "description": "Generate massive amount of unique codes",
     "keywords": ["unique", "code", "generator"],
     "license": "MIT",
