@@ -1,5 +1,5 @@
 <?php
-namespace MTL\CodeGenerator\Handler;
+namespace MTL\UniqueGenerator\Handler;
 
 interface HandlerInterface
 {

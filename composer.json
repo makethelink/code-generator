@@ -1,15 +1,21 @@
 {
-    "name": "mtl/code-generator",
+    "name": "mtl/unique-genenrator",
     "description": "Generate massive amount of unique codes",
+    "keywords": ["unique", "code", "generator"],
     "license": "MIT",
     "authors": [
         {
             "name": "Kieu Anh Tuan",
             "email": "passkey1510@gmail.com"
+        },
+        {
+            "name": "Make The Link",
+            "email": "dev@mtl.fm"
         }
     ],
-    "minimum-stability": "stable",
-    "require": {},
+    "require": {
+        "php": ">=5.3"
+    },
     "require-dev": {
         "phpunit/phpunit": "~4.4"
     },
@@ -21,6 +27,11 @@
     "autoload-dev": {
         "psr-4": {
             "MTL\\": "test/MTL/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
         }
     }
 }

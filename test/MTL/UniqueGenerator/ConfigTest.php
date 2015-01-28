@@ -1,5 +1,5 @@
 <?php
-namespace MTL\CodeGenerator;
+namespace MTL\UniqueGenerator;
 
 class ConfigTest extends \PHPUnit_Framework_TestCase
 {

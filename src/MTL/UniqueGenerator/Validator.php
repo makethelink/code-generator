@@ -1,10 +1,13 @@
 <?php
-namespace MTL\CodeGenerator;
+namespace MTL\UniqueGenerator;
 
 class Validator 
 {
     private $guessFactor = 0.1;
 
+    /**
+     * @param float $guessFactor
+     */
     public function __construct($guessFactor = null)
     {
         if ($guessFactor > 0) {
@@ -12,6 +15,13 @@ class Validator
         }
     }
 
+    /**
+     * @param $repeated
+     * @param $number
+     * @param $length
+     * @param $characterCount
+     * @return array
+     */
     public function validate($repeated, $number, $length, $characterCount)
     {
         $violations = array();
