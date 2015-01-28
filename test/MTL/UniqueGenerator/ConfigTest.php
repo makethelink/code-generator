@@ -31,7 +31,9 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
         ));
 
         $this->assertFalse($config->getRepeated());
-        $this->assertEquals(sort(array_merge(range('a', 'z'), range('A', 'Z'), range(0, 9))), sort($config->getAvailableCharacters()));
+        $availableCharacters = $config->getAvailableCharacters();
+        $expected = array_merge(range('a', 'z'), range('A', 'Z'), range(0, 9));
+        $this->assertSame(array_diff($expected, $availableCharacters), array_diff($availableCharacters, $expected));
     }
 
     public function testConfig()
@@ -46,6 +48,8 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(5, $config->getNumber());
         $this->assertEquals(10, $config->getLength());
         $this->assertTrue($config->getRepeated());
-        $this->assertEquals(sort(range('A', 'Z')), sort($config->getAvailableCharacters()));
+        $availableCharacters = $config->getAvailableCharacters();
+        $expected = range('A', 'Z');
+        $this->assertSame(array_diff($expected, $availableCharacters), array_diff($availableCharacters, $expected));
     }
 }
